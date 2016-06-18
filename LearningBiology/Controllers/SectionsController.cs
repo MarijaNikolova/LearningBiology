@@ -47,7 +47,7 @@ namespace LearningBiology.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,ShortContent,Content")] Section section)
+        public ActionResult Create([Bind(Include = "ID,Name,ShortContent,Content,VideoName")] Section section)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace LearningBiology.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,ShortContent,Content")] Section section)
+        public ActionResult Edit([Bind(Include = "ID,Name,ShortContent,Content,VideoName")] Section section)
         {
             if (ModelState.IsValid)
             {
