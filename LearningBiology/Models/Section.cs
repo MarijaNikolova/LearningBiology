@@ -10,8 +10,9 @@ namespace LearningBiology.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        public string ShortContent { get; set; }
         public string Content { get; set; }
-
+        public string VideoName { get; set; }
 
         public virtual ICollection<Question> Questions { get; set; }
     }
