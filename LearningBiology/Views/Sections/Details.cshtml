@@ -41,6 +41,17 @@
         </dd>
 
     </dl>
+    <hr />
+    <h4>Прашања од темата:</h4>
+    <ul>
+        @foreach(var item in Model.Questions)
+        {
+            <li>
+
+                @Html.DisplayFor(modelItem => item.text)
+            </li>
+        }
+    </ul>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
