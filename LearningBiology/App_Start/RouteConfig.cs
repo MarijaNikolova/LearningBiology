@@ -13,13 +13,13 @@ namespace LearningBiology
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(null,"Sections/{activityId}/Questions/{action}/{id}",
+            routes.MapRoute(null,"Sections/{sectionId}/Questions/{action}/{id}",
     new
     {
         controller = "Questions",
         action = "Details",
         id = "",
-        activityId = "",
+        sectionId = "",
         activity = ""
     });
 

@@ -218,6 +218,14 @@
     <Compile Include="Migrations\201606191029538_iscorrectfield.Designer.cs">
       <DependentUpon>201606191029538_iscorrectfield.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606191524040_useranswer.cs" />
+    <Compile Include="Migrations\201606191524040_useranswer.Designer.cs">
+      <DependentUpon>201606191524040_useranswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606191540486_useranswer1.cs" />
+    <Compile Include="Migrations\201606191540486_useranswer1.Designer.cs">
+      <DependentUpon>201606191540486_useranswer1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Answer.cs" />
@@ -227,6 +235,7 @@
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\SectionQuestionAnswerContext.cs" />
+    <Compile Include="Models\UserAnswer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -329,6 +338,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606191029538_iscorrectfield.resx">
       <DependentUpon>201606191029538_iscorrectfield.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606191524040_useranswer.resx">
+      <DependentUpon>201606191524040_useranswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606191540486_useranswer1.resx">
+      <DependentUpon>201606191540486_useranswer1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

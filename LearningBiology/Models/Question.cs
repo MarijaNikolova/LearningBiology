@@ -19,5 +19,6 @@ namespace LearningBiology.Models
 
         public virtual Section Section { get; set; }
         public virtual ICollection<OfferedAswer> OfferedAnswers { get; set; }
+        public virtual ICollection<UserAnswer> UserAnswers { get; set; }
     }
 }
