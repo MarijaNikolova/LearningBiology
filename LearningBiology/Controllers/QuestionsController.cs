@@ -16,10 +16,10 @@ namespace LearningBiology.Controllers
         private DatabaseContext db = new DatabaseContext();
 
         // GET: Questions
-        public ActionResult Index(int id=1)
+        public ActionResult Index(int sectionID=1)
         {
             var questions = db.Questions.Include(q => q.Section);
-            questions = questions.Where(q => q.sectionID == id);
+            questions = questions.Where(q => q.sectionID == sectionID);
             return View(questions.ToList());
         }
 

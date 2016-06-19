@@ -35,6 +35,15 @@
         </dd>
 
     </dl>
+    <h3>Понудени одговори</h3>
+    <ul class="list-group">
+        @foreach(var item in Model.OfferedAnswers)
+        {
+            <li class="list-group-item">
+                @Html.DisplayFor(modelItem => item.Answer.text)
+            </li>
+        }
+    </ul>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
