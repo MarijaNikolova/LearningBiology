@@ -317,6 +317,7 @@
     <Content Include="Views\OfferedAswers\Details.cshtml" />
     <Content Include="Views\OfferedAswers\Edit.cshtml" />
     <Content Include="Views\OfferedAswers\Index.cshtml" />
+    <Content Include="Views\Questions\CorrectAnswer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -122,6 +122,15 @@ namespace LearningBiology.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult CheckAnswers(int ID, int QuestionID, int AnswerID, bool isCorrect)
+        {
+          
+            OfferedAswer oa = db.OfferedAnswers.Find(ID);
+
+            return RedirectToAction("Index");
+        }
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
