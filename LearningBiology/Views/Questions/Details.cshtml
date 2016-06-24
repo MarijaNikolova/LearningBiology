@@ -35,6 +35,9 @@
         </dd>
 
     </dl>
+
+
+    
     <h3>Понудени одговори</h3>
 
   
@@ -44,18 +47,23 @@
 
         <div class="form-horizontal">
            
-            @foreach (var item in Model.OfferedAnswers)
+            @for(var i=0;i<Model.OfferedAnswers.Count();i++)
             {
 
                 <hr />
                 <div class="form-group">
-                    @Html.HiddenFor(modelItem => item.ID)
-                    @Html.HiddenFor(modelItem=>item.QuestionID)
-                    @Html.HiddenFor(modelItem=>item.AnswerID)
-                    @Html.LabelFor(modelItem => item.Answer.text, "AnswerID", htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.HiddenFor(m => m.OfferedAnswers.ElementAt(i).ID)
+                    @Html.HiddenFor(m => m.OfferedAnswers.ElementAt(i).QuestionID)
+                    @Html.HiddenFor(m => m.OfferedAnswers.ElementAt(i).AnswerID)
+                   
+                    <div class="col-md-2">
+                        @Html.DisplayFor(m => m.OfferedAnswers.ElementAt(i).Answer.text)
+                    </div>
+                  
                     <div class="col-md-10">
-                        @Html.CheckBox("IsCorrect", false, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(modelItem => item.Answer.text, "", new { @class = "text-danger" })
+                        
+                        <input type="checkbox" name="isSelected" value="@Model.OfferedAnswers.ElementAt(i).ID" />
+                      
                     </div>
                 </div>
             }

@@ -233,6 +233,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OfferedAswer.cs" />
     <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\QuestionAnswerViewModel.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\SectionQuestionAnswerContext.cs" />
     <Compile Include="Models\UserAnswer.cs" />
@@ -318,6 +319,8 @@
     <Content Include="Views\OfferedAswers\Edit.cshtml" />
     <Content Include="Views\OfferedAswers\Index.cshtml" />
     <Content Include="Views\Questions\CorrectAnswer.cshtml" />
+    <Content Include="Views\Questions\PopupCorrect.cshtml" />
+    <Content Include="Views\Questions\Correct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

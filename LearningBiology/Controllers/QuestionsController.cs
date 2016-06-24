@@ -24,7 +24,7 @@ namespace LearningBiology.Controllers
         }
 
         // GET: Questions/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? id, string message="")
         {
             if (id == null)
             {
@@ -121,15 +121,119 @@ namespace LearningBiology.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-        public ActionResult CheckAnswers(int ID, int QuestionID, int AnswerID, bool isCorrect)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CheckAnswers(FormCollection model)
         {
-          
-            OfferedAswer oa = db.OfferedAnswers.Find(ID);
 
-            return RedirectToAction("Index");
+            if (model != null)
+            {
+
+                /* for (int i = 0; i < model.Count(); ++i)
+                 {
+                     OfferedAswer answer = model.ElementAt(i);
+                     int ID = answer.ID;
+                     OfferedAswer oa = db.OfferedAnswers.Find(ID);
+                     if (answer.IsCorrect != oa.IsCorrect)
+                     {
+
+                         return "Not correct";
+                     }
+                 }
+                 return "Correct!"; */
+
+                // @Html.CheckBoxFor(m => m.OfferedAnswers.ElementAt(i).IsCorrect)
+                //                        @Html.CheckBox("IsCorrect", false, htmlAttributes: new { @class = "form-control" })
+                //String id = model["ID"];
+                //if(id!=null)
+                //String[] IDs= id.Split(',');
+
+              
+                String answerIds = model["AnswerID"];
+                String[] answerIDs;
+                if (answerIds!=null)
+                answerIDs = answerIds.Split(',');
+
+
+                String questionIds = model["QuestionID"];
+                //String[] questionIDs = questionIds.Split(',');
+               // int idQuestion = Int32.Parse(questionIDs[0]);
+
+                String selected = model["isSelected"];
+                String[] selectedAnswers;
+                int[] idsAnsweredQuestions;
+                if (selected != null && questionIds!=null)
+                {
+                  
+                    String[] questionIDs = questionIds.Split(',');
+                    int idQuestion = Int32.Parse(questionIDs[0]);
+                    selectedAnswers = selected.Split(',');
+                    idsAnsweredQuestions = new int[selectedAnswers.Count()];
+                    for(int i = 0; i < selectedAnswers.Count(); ++i)
+                    {
+                        idsAnsweredQuestions[i] = Int32.Parse(selectedAnswers.ElementAt(i));
+                    }
+                    Question question = db.Questions.Find(idQuestion);
+
+                    ICollection<OfferedAswer> answers = question.OfferedAnswers;
+
+                    if(idsAnsweredQuestions.Count()==0)
+                    {
+                        return RedirectToAction("Details", new { id = idQuestion, message="Incomplete" });
+                    }
+                    for (int i = 0; i < idsAnsweredQuestions.Count(); ++i)
+                    {
+                        OfferedAswer answer = db.OfferedAnswers.Find(idsAnsweredQuestions[i]);
+                        if (!answer.IsCorrect)
+                        {
+                            return RedirectToAction("Details", new { id =idQuestion,message="Incorrect" });
+                        }
+                    }
+                    // ViewBag["id"] = idQuestion;
+                    //return View("CorrectAnswer");
+                    return RedirectToAction("NextQuestion", new { id = idQuestion,sectionId=question.sectionID});
+                }
+
+            }
+
+            return RedirectToAction("Details", new { id = 1, message = "Incomplete" });
         }
 
+
+        public ActionResult NextQuestion(int id,int sectionId)
+        {
+
+            var questions = from q in db.Questions
+                            select q;
+
+           
+            questions = questions.Where(q=>q.sectionID==sectionId).OrderByDescending(q => q.ID);
+
+            Question last = questions.First();
+            Question question;
+            if (id!=last.ID)
+            {
+                questions = questions.Where(q => q.ID > id).OrderBy(q => q.ID).Take(1);
+            }else
+            {
+                questions = questions.OrderBy(q => q.ID);
+               
+            }
+            
+          
+            question = questions.First();
+
+
+            return RedirectToAction("Details", new { id = question.ID });
+
+
+           
+        }
+
+        public PartialViewResult showPopUp(String result)
+        {
+            return PartialView();
+        }
 
         protected override void Dispose(bool disposing)
         {

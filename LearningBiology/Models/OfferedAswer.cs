@@ -15,5 +15,10 @@ namespace LearningBiology.Models
         public virtual Question Question { get; set; }
         public virtual Answer Answer { get; set; }
 
+        public override string ToString()
+        {
+            return "";
+        }
+
     }
 }
