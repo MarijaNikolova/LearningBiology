@@ -20,7 +20,8 @@ namespace LearningBiology.Controllers
         {
             var questions = db.Questions.Include(q => q.Section);
             questions = questions.Where(q => q.sectionID == sectionId);
-            return View(questions.ToList());
+            Question firstQuestion = questions.First();
+            return RedirectToAction("Details", new { id = firstQuestion.ID, message = "" });
         }
 
         // GET: Questions/Details/5
@@ -35,6 +36,7 @@ namespace LearningBiology.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.message = message;
             return View(question);
         }
 
@@ -175,28 +177,39 @@ namespace LearningBiology.Controllers
                     }
                     Question question = db.Questions.Find(idQuestion);
 
-                    ICollection<OfferedAswer> answers = question.OfferedAnswers;
 
-                    if(idsAnsweredQuestions.Count()==0)
+                    var answers = question.OfferedAnswers.Where(q=>q.IsCorrect==true);
+
+                   
+
+                    int count = 0;
+                    if(idsAnsweredQuestions.Count()==0 || answers.Count()>idsAnsweredQuestions.Count())
                     {
-                        return RedirectToAction("Details", new { id = idQuestion, message="Incomplete" });
+                        return RedirectToAction("Details", new { id = idQuestion, message="Некомплетен одговор." });
                     }
                     for (int i = 0; i < idsAnsweredQuestions.Count(); ++i)
                     {
                         OfferedAswer answer = db.OfferedAnswers.Find(idsAnsweredQuestions[i]);
                         if (!answer.IsCorrect)
                         {
-                            return RedirectToAction("Details", new { id =idQuestion,message="Incorrect" });
+                            return RedirectToAction("Details", new { id =idQuestion,message="Неточен одговор." });
+                        }
+                        else
+                        {
+                            ++count;
                         }
                     }
                     // ViewBag["id"] = idQuestion;
                     //return View("CorrectAnswer");
+                    
                     return RedirectToAction("NextQuestion", new { id = idQuestion,sectionId=question.sectionID});
                 }
 
             }
 
-            return RedirectToAction("Details", new { id = 1, message = "Incomplete" });
+
+
+            return View("CorrectAnswer");
         }
 
 
