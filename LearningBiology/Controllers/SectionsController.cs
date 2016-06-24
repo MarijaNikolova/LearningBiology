@@ -34,6 +34,7 @@ namespace LearningBiology.Controllers
                 return HttpNotFound();
             }
             return View(section);
+
         }
 
         // GET: Sections/Create
