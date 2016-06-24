@@ -56,6 +56,27 @@
 .noborder{
     border-bottom-right-radius:0px;
     border-bottom-left-radius:0px;
-     
      font-size:13pt;
+}
+input[type="checkbox"]{
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background-color:#00AFEF;
+    border: solid 5px;
+    border-color:#91D8F7;
+    border-radius:3px;
+    cursor:pointer;
+
+}
+input[type="checkbox"]:checked + label span {
+    
+    border:none;
+    background-color:#00AFEF;
+
 }
