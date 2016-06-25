@@ -77,9 +77,7 @@
     vertical-align: middle;
     margin-top: 5px;
 }
-.align_p{
-    margin-top:5px;
-}
+
 h2,h3{
     font-weight: bold;
     color:#52658c;
@@ -103,14 +101,9 @@ h2,h3{
 }
 .box-odd:hover{
 
-    padding:60px;
     
 }
 .box-even:hover{
-     padding:60px;
+    
    
-}
-img{
-    height:150px !important;
-    width:200px !important;
 }

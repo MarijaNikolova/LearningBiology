@@ -18,7 +18,7 @@ namespace LearningBiology.Controllers
         // GET: Sections
         public ActionResult Index()
         {
-            return View(db.Sections.ToList());
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Sections/Details/5
