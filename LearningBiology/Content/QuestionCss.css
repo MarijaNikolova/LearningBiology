@@ -1,8 +1,7 @@
 ﻿body {
-   padding-top:100px;
+    
    font-family:'Century Gothic';
-   background-color:#699A2F;
-  
+   background-color: #B5E034; 
 }
 .question{
 
@@ -13,7 +12,7 @@
 }
 .panel{
     
-     font-size:13pt;
+      font-size:13pt;
       box-shadow: 3px 3px 3px #888888;
       border:none;
    

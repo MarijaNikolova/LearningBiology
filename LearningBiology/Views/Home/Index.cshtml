@@ -1,17 +1,177 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<link href="@Url.Content("~/Content/stylePocetna.css")" rel="stylesheet" type="text/css" />
 
-<div class="jumbotron">
-    <h3 class="text-center">Оп, оп, еден, два, три, научи се за растенијата ти!</h3>
-    <p class="text-center lead">Апликација со чија помош децата би можеле да ги научат основите за растенијата.</p>
-    
-</div>
+<img src="~/Content/Images/boyR.png" class="img-responsive img-absolute abs-boy" alt="" />
+<img src="~/Content/Images/girlR.png" class="img-responsive img-absolute abs-girl" alt="" />
+<div class="row welcome">
 
-<div class="row">
-    <div class="col-lg-12">
-        <div class="pull-right">
-            @Html.ActionLink("Почни со учење", "Details", "Sections", new { id=1}, new { @class = "btn btn-success" })
-        </div>
+    <div class="col-lg-6 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-lg-offset-3 col-xs-6 col-xs-offset-3 text-center">
+        <h4 class="text-white font-welcome">Добродојдовте на нашиот сајт</h4>
+        <p class="text-white font-welcome1 pull-right">Ајде да учиме заедно . . .</p>
     </div>
 </div>
+
+
+<div class="row">
+    <div class="col-md-2 col-md-offset-3 col-xs-4">
+        <img src="~/Content/Images/cactus.png" class="img-responsive img-plant pull-right" alt="" />
+    </div>
+    <div class="col-md-2 col-xs-4 text-center">
+        <img src="~/Content/Images/plant1.png" class="img-responsive img-plant center-block" alt="" />
+    </div>
+    <div class="col-md-2 col-xs-4">
+        <img src="~/Content/Images/plant.png" class="img-responsive img-plant" alt="" />
+    </div>
+</div>
+
+<div class="row facts">
+    <!--/-->
+    <div class="col-md-2 col-md-offset-2 text-right col-xs-12 no-padding">
+        @Html.ActionLink("ЗАПОЧНИ СО УЧЕЊЕ", "Details", "Sections", new { id = 1 }, new { @class = "btn btn-warning btn-square btn-left" })
+    </div>
+
+    <div class="col-md-4 col-xs-12 no-padding">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+
+                <div class="item active">
+                    <div class="carousel-caption">
+                        <h4>Факт: Дали знаевте дека дрвото даб може да живее повеќе од 200 години?!</h4>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h4>Факт: Дали знаевте дека бамбусот може да порасне и до 1 метар за 24 часа?</h4>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h4>Факт: Дали знаевте дека најголемата тиква на светот тежи 606 килограми?!</h4>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h4>Факт: Дали знаевте дека коралите растат многу споро. Некои корали растат само 1см годишно.</h4>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h4>Факт: Дали знаевте дека лубениците потекнуваат од пустината Калахари во Африка?</h4>
+                    </div>
+                </div>
+
+
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h4>Факт: Дали знаевте дека неможете да дознаете дали боровинката е зрела по нејзината боја.</h4>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h4>Факт: Дали знаевте дека цвеќето Titan Arum е најголемиот цвет на светот и кога цвета има ужасен мирис на труло месо!</h4>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h4>Факт: Дали знаевте дека доматот и краставицата се овошја!</h4>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h4>Факт: Дали знаевте дека лубениците содржат 92% вода!</h4>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h4>Факт: Дали знаевте дека јаболката се член на фамилијата рози?</h4>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h4>Факт: Дали знаевте дека оризот има 5 пати повеќе ДНА од човекот?</h4>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h4>Факт: Дали знаевте дека постојат преку 2000 различни видови на кактуси?</h4>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-2 col-xs-12 no-padding">
+        <button class="btn btn-info btn-square btn-right">ИГРИ</button>
+    </div>
+    <!---->
+</div>
+
+<div class="row games-wrapper">
+    <div class="col-sm-12 custom-margin">
+        <a href="#allGames" class="btn btn-primary btn-square btn-game">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ИГРИ&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-down"></span></a>
+    </div>
+
+    <div class="col-sm-12 margin-b" id="allGames">
+        <div class="col-sm-4">
+            <img src="~/Content/Images/slika.png" class="img-responsive img-game center-block" alt="" />
+        </div>
+        <div class="col-sm-4 center-block">
+            <img src="~/Content/Images/slika.png" class="img-responsive img-game center-block" alt="" />
+        </div>
+        <div class="col-sm-4 center-block">
+            <img src="~/Content/Images/slika.png" class="img-responsive img-game center-block" alt="" />
+        </div>
+    </div>
+
+    <div class="col-sm-12 margin-b margin-bot">
+        <div class="col-sm-4">
+            <img src="~/Content/Images/slika.png" class="img-responsive img-game center-block" alt="" />
+        </div>
+        <div class="col-sm-4">
+            <img src="~/Content/Images/slika.png" class="img-responsive img-game center-block" alt="" />
+        </div>
+        <div class="col-sm-4">
+            <img src="~/Content/Images/slika.png" class="img-responsive img-game center-block" alt="" />
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="pull-right">
+              
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,326 @@
+body{
+    background-color: #B5E034;
+}
+.navbar-default{
+    height: 95px;
+    box-shadow: 2px 2px 2px #888888;
+    border: none;
+
+}
+.navbar-brand{
+    height: 110px;
+    padding-top: 0;
+}
+.btn-flat{
+    width: 100px;
+    font-size: 15px;
+    /*border: none;*/
+    border-radius: 0;
+
+}
+.navbar-nav>li>a{
+    padding-top: 35px;
+    height: 110px;
+}
+.navbar-default .navbar-nav>li>a{
+    color: white;
+    border: none;
+    box-shadow: 2px 2px 2px #888888;
+    font-family: "Century Gothic";
+    font-size: 16px;
+}
+.navbar-default .navbar-nav>li>a:hover{
+     color: white;
+ }
+
+.navbar-default .navbar-nav>li>a:visited{
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a:active{
+    box-shadow: inset 0px 20px 147px -66px rgba(0,0,0,1);
+}
+
+.navbar-default .navbar-nav>li>a.color1{
+    background-color: #55B6BD;
+    border-bottom: 5px solid #2FA5AD;
+}
+
+.navbar-default .navbar-nav>li>a.color1:hover{
+    background-color: #59CCD4;
+
+}
+
+.navbar-default .navbar-nav>li>a.color2{
+    background-color: #BD262B;
+    border-bottom: 5px solid #AD161B
+}
+.navbar-default .navbar-nav>li>a.color2:hover{
+    background-color: #Cc3136;
+
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+    color: white;
+    background-color: #Cc3136;
+}
+
+.navbar-default .navbar-nav>li>a.color3{
+    background-color: #F7B12F;
+    border-bottom: 5px solid #DB981B
+}
+
+.navbar-default .navbar-nav>li>a.color3:hover{
+    background-color: #F5C262;
+
+}
+
+.btn-color1{
+    border-bottom: 2px solid darkblue;
+}
+.large{
+    font-size: 1.8em;
+}
+/*.dropdown-menu>li>a{*/
+    /*display: inline;*/
+    /*float: left;*/
+    /*padding: 15px 20px;*/
+    /*clear: none;*/
+    /*font-weight: 400;*/
+    /*line-height: 1.42857143;*/
+    /*color: white;*/
+    /*white-space: nowrap;*/
+/*}*/
+/*.dropdown-menu{*/
+    /*min-width: 747px;*/
+    /*padding: 0;*/
+/*}*/
+/*.btn-themes{*/
+    /*border-radius: 0;*/
+    /*border:none;*/
+    /*height: 70px;*/
+    /*font-family: "Century Gothic";*/
+
+/*}*/
+
+
+.img-plant{
+    width: 60%;
+    height: 60%;
+}
+
+.text-white{
+    color: white;
+}
+.welcome{
+    margin-top: 70px;
+    margin-bottom: 60px;
+}
+.facts{
+    margin-top: 30px;
+}
+
+.item{
+    background-color: #Ff6505;
+    height: 180px;
+
+}
+.carousel-caption{
+font-family: "Hangyaboly";
+}
+.carousel-control.left, .carousel-control.right {
+    background-image: none;
+}
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+    margin-right: -25px;
+    font-size: 14px;
+    top: 55%;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    margin-left: -25px;
+    top: 55%;
+    font-size: 14px;
+
+}
+.carousel-control {
+
+    color: #fff;
+    text-align: center;
+    text-shadow: none;
+
+}
+.carousel-inner{
+    box-shadow: 0px -2px 1px #888888;
+
+}
+.carousel-indicators li {
+
+
+    background-color: #FAD500;
+    border: none;
+    border-radius: 10px;
+}
+
+.carousel-indicators .active {
+
+    width: 10px;
+    height: 10px;
+    background-color: #0DA1DB;
+}
+.no-padding{
+    padding: 0;
+}
+.btn-square{
+    border-radius: 0;
+    border: none;
+    font-size: 1.5em;
+    font-family: "Roboto Black";
+}
+.btn-left, .btn-right{
+    width: 100%;
+    height: 4.05em;
+    font-family: "Mail Ray Stuff";
+    font-size: 1.6em;
+}
+.btn-right{
+    background-color: #2FA5AD;
+    margin-top: 4em;
+    box-shadow: 0px -2px 1px #888888;
+}
+.btn-left{
+    background-color: #A7365E;
+    margin-top: 4em;
+    box-shadow: 0px -2px 1px #888888;
+}
+.games-wrapper{
+    background-color: #55B6BD;
+    margin-top: -1px;
+}
+.navbar-default{
+}
+.footer{
+    background-color: #12AA9E;
+    height: 60px;
+    color: white;
+    padding-top: 20px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    width: 1500px;
+    margin-left: -90px;
+
+}
+.custom-margin{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-left: 0;
+}
+.img-absolute{
+    position: absolute;
+
+}
+.abs-boy{
+    top: 350px;
+    right: -100px;
+    z-index: -2;
+}
+.abs-girl{
+    top: 460px;
+    right: -75px;
+    z-index: -1;
+}
+.img-game{
+    width: 60%;
+    height: 60%;
+}
+.margin-b{
+    margin-top: 30px;
+}
+.margin-bot{
+    margin-bottom: 60px;
+}
+.btn-games{
+
+}
+
+.font-welcome{
+    font-family: "Engine";
+    font-size: 2.5em;
+}
+.font-welcome1{
+    font-family: "Gunny Rewritten";
+    font-size: 1.8em;
+
+}
+
+@media only screen and (max-width: 992px){
+    .abs-girl{
+        display: none;
+    }
+    .btn-right{
+        margin-top: 0;
+    }
+}
+.btn-default{
+
+}
+@media only screen and (max-width: 768px) {
+    .navbar-right {
+        width:100%;
+        margin: auto auto;
+        padding: 0;
+        margin-top: -15px;
+
+    }
+    .btn-flat{
+        width:100%;
+        margin: auto auto;
+        padding: 0;
+    }
+    .navbar-collapse{
+        border: none;
+
+    }
+    .navbar-header{
+        margin-bottom: 0;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: white;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+        background-color: seagreen;
+        color: white;
+        border: none;
+    }
+
+}
+
+
+@media screen and (min-width: 768px) {
+    .dropdown-menu>li>a{
+        display: inline;
+        float: left;
+        padding: 15px 20px;
+        clear: none;
+        font-weight: 400;
+        line-height: 1.42857143;
+        color: white;
+        white-space: nowrap;
+    }
+    .dropdown-menu{
+        min-width: 759px;
+        padding: 0;
+    }
+    .btn-themes{
+        border-radius: 0;
+        border:1px solid white;
+        height: 70px;
+        font-family: "Century Gothic";
+
+    }
+    .navbar-right .dropdown-menu {
+        right: -120px;
+    }
+
+}

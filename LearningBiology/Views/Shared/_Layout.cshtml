@@ -6,10 +6,15 @@
     <title>@ViewBag.Title -Учење биологија </title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="@Url.Content("~/Content/styleGlavna.css")" rel="stylesheet" type="text/css" />
+
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+
+  
+
+    <div class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,23 +22,59 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Учење биологија", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="#"><img src="~/Content/Images/logo.png" class="navbar-brand logo" alt="" /></a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Дома", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Теми", "Index", "Sections")</li>
-                    <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
-                  
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" class="btn btn-default btn-flat color1">
+                            <span class="glyphicon glyphicon-home large"></span>
+                            <br /> Почетна
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-default btn-flat dropdown-toggle color2" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-book large"></span>
+                            <br /> Теми
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                           
+                            @Html.ActionLink("Делови на растенијата", "Details", "Sections", new { id = 1 }, new { @class = "btn btn-success btn-themes" })
+                            @Html.ActionLink("Како растат растенија", "Details", "Sections", new { id = 2 }, new { @class = "btn  btn-warning  btn-themes" })
+                            @Html.ActionLink("Растенијата и водата", "Details", "Sections", new { id = 3 }, new { @class = "btn  btn-info btn-themes" })
+                            @Html.ActionLink("Растенијата и светлината", "Details", "Sections", new { id = 4 }, new { @class = "btn  btn-danger btn-themes" })
+                            @Html.ActionLink("Растенијата и топлината", "Details", "Sections", new { id = 5 }, new { @class = "btn btn-success btn-themes" })
+                            @Html.ActionLink("Семиња и видови", "Details", "Sections", new { id = 6 }, new { @class = "btn btn-warning btn-themes" })
+                            
+                           
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-default btn-flat color3">
+                            <span class="glyphicon glyphicon-envelope large"></span>
+                            <br /> Контакт
+                        </a>
+                    </li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
+
+
+
+
+
+
+   
+    <div class="container body-content" >
         @RenderBody()
-        <hr />
-        <footer>
+        
+       
+    </div>
+
+    <div class="col-xs-12">
+        <footer class="footer col-xs-12 text-center">
             <p>&copy; @DateTime.Now.Year - Учење биологија</p>
         </footer>
     </div>

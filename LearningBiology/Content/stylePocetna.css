@@ -1,0 +1,144 @@
+body{
+    background-color: #B5E034;
+}
+.img-plant{
+    width: 60%;
+    height: 60%;
+}
+
+.text-white{
+    color: white;
+}
+.welcome{
+    margin-top: 70px;
+    margin-bottom: 60px;
+}
+.facts{
+    margin-top: 30px;
+}
+
+.item{
+    background-color: #Ff6505;
+    height: 180px;
+
+}
+.carousel-caption{
+    font-family: "Hangyaboly";
+}
+.carousel-control.left, .carousel-control.right {
+    background-image: none;
+}
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+    margin-right: -25px;
+    font-size: 14px;
+    top: 55%;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    margin-left: -25px;
+    top: 55%;
+    font-size: 14px;
+
+}
+.carousel-control {
+
+    color: #fff;
+    text-align: center;
+    text-shadow: none;
+
+}
+.carousel-inner{
+    box-shadow: 0px -2px 1px #888888;
+
+}
+.carousel-indicators li {
+
+
+    background-color: #FAD500;
+    border: none;
+    border-radius: 10px;
+}
+
+.carousel-indicators .active {
+
+    width: 10px;
+    height: 10px;
+    background-color: #0DA1DB;
+}
+.no-padding{
+    padding: 0;
+}
+.btn-square{
+    border-radius: 0;
+    border: none;
+    font-size: 1.5em;
+    font-family: "Roboto Black";
+}
+.btn-left, .btn-right{
+    width: 100%;
+    height: 5.9em;
+    font-family: "Mail Ray Stuff";
+    font-size: 1.3em;
+}
+.btn-right{
+    background-color: #2FA5AD;
+    margin-top: 4em;
+    box-shadow: 0px -2px 1px #888888;
+}
+.btn-left{
+    background-color: #A7365E;
+    margin-top: 4em;
+    box-shadow: 0px -2px 1px #888888;
+}
+.games-wrapper{
+    background-color: #55B6BD;
+    margin-top: -1px;
+}
+.custom-margin{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-left: 0;
+}
+.img-absolute{
+    position: absolute;
+
+}
+.abs-boy{
+    top: 350px;
+    right: -100px;
+    z-index: -2;
+}
+.abs-girl{
+    top: 460px;
+    right: -75px;
+    z-index: -1;
+}
+.img-game{
+    width: 60%;
+    height: 60%;
+}
+.margin-b{
+    margin-top: 30px;
+}
+.margin-bot{
+    margin-bottom: 60px;
+}
+
+
+.font-welcome{
+    font-family: "Engine";
+    font-size: 2.5em;
+}
+.font-welcome1{
+    font-family: "Gunny Rewritten";
+    font-size: 1.8em;
+
+}
+
+@media only screen and (max-width: 992px){
+    .abs-girl{
+        display: none;
+    }
+    .btn-right{
+        margin-top: 0;
+    }
+}

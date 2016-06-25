@@ -5,38 +5,34 @@
 }
 
 <link href="@Url.Content("~/Content/theme1.css")" rel="stylesheet" type="text/css" />
-<link href="@Url.Content("~/Content/font-awesome.css")" rel="stylesheet" type="text/css" />
-<link href="@Url.Content("~/Content/font-awesome.min.css")" rel="stylesheet" type="text/css" />
-
-
-
-
-
 
 
 
 
 
 <div class="container">
+    <div class="row" style="padding-top:30px">
+
+    </div>
     <div class="row">
-        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
-            <div class="list-group collapse navbar-collapse">
-                <a href="#" class="list-group-item disabled lead_theme"><h3>Теми</h3></a>
+        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs" style="">
+            <div class="list-group">
+                <a href="#" class="list-group-item disabled text-center" >Теми</a>
                 @if (ViewBag.active == 1)
                 {
-                    @Html.ActionLink("Делови на растенијата", "Details", "Sections", new { id = 1 }, new { @class = "list-group-item active_list_group" })
+                    @Html.ActionLink("Како растат растенијата", "Details", "Sections", new { id = 1 }, new { @class = "list-group-item active_list_group" })
                 }
                 else
                 {
-                    @Html.ActionLink("Делови на растенијата", "Details", "Sections", new { id = 1 }, new { @class = "list-group-item nonactive" })
+                    @Html.ActionLink("Како растат растенијата", "Details", "Sections", new { id = 1 }, new { @class = "list-group-item nonactive" })
                 }
                 @if (ViewBag.active == 2)
                 {
-                    @Html.ActionLink("Како растат растенијата", "Details", "Sections", new { id = 2 }, new { @class = "list-group-item active_list_group" })
+                    @Html.ActionLink("Делови на растенијата", "Details", "Sections", new { id = 2 }, new { @class = "list-group-item active_list_group" })
                 }
                 else
                 {
-                    @Html.ActionLink("Како растат растенијата", "Details", "Sections", new { id = 2 }, new { @class = "list-group-item nonactive" })
+                    @Html.ActionLink("Делови на растенијата", "Details", "Sections", new { id = 2 }, new { @class = "list-group-item nonactive" })
                 }
                 @if (ViewBag.active == 3)
                 {
@@ -73,21 +69,21 @@
 
             </div>
         </div>
-        <div class="col-lg-9 col-md-9 details">
+        <div class="col-lg-9 col-md-9  details">
             <div class="row page-header">
                 <div class="col-lg-1 col-md-1"></div>
-                <div class="col-lg-10 col-md-10"><p><h2> Тема @Model.ID: @Model.Name</h2></p></div>
+                <div class="col-lg-10 col-md-10 text-center"><p><h2> Тема @Model.ID: @Model.Name</h2></p></div>
                 <div class="col-lg-1 col-md-1"></div>
 
             </div>
 
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-10 text-center">
                     @for(var k = 0; k < Model.Images.Count(); ++k)
                             {
                                 var img = Model.Images.ElementAt(k).Title;
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                            <img class="img-responsive img-rounded img-thumbnail" src="~/Content/Images/@img"/>
+                        <div class="col-lg-4 col-lg-offset-1 col-md-offset-1 col-md-4 col-sm-6 col-xs-6">
+                            <img class="img-responsive img-thumbnail" src="~/Content/Images/@img" height="200" width="200"/>
                         </div>
                     }
                 </div>
@@ -128,7 +124,7 @@
                 <div class="col-lg-1 col-md-1"></div>
                 <div class="col-lg-3 col-md-3"><button type="button" class="btn game_class">  <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span> Игри </button></div>
                 <div class="col-lg-1 col-md-1"></div>
-                <div class="col-lg-3 col-md-3"><button type="button" class="btn kviz_class">  <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Квиз </button></div>
+                <div class="col-lg-3 col-md-3"><div class="col-lg-3 col-md-3">@Html.ActionLink("Квиз", "Index", "Questions", new { sectionId = Model.ID }, new { @class = "btn kviz_class" })</div></div>
             </div>
             <div class="row btn-group-vertical visible-xs">
                 <div class="col-lg-1 col-md-1"></div>
@@ -136,11 +132,11 @@
                 <div class="col-lg-1 col-md-1"></div>
                 <div class="col-lg-3 col-md-3 "><button type="button" class="btn game_class">  <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span> Игри </button></div>
                 <div class="col-lg-1 col-md-1"></div>
-                <div class="col-lg-3 col-md-3"><button type="button" class="btn kviz_class">  <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Квиз </button></div>
+                <div class="col-lg-3 col-md-3">@Html.ActionLink("Квиз", "Index", "Questions", new { sectionId = Model.ID }, new { @class = "btn kviz_class" })</div>
             </div>
             <div class="row row2">
                 
-                <div class="col-lg-3 col-md-3 align_p"><button type="button" class="btn btn-lg btn-success"> Следно <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button></div>
+                <div class="col-lg-3 col-md-3  col-lg-offset-9 align_p"><button type="button" class="btn btn-lg btn-success"> Следно <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button></div>
             </div>
             <div class="row"></div>
 

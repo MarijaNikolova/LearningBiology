@@ -1,0 +1,30 @@
+﻿
+.box{
+   
+  
+    border-radius:15px;
+    padding:50px;
+    font-size:20px;
+    color:white;
+    text-align:justify;
+}
+.box-even{
+    background-color:#DE9B1F;
+    
+}
+.box-odd{
+    background-color:#4EB693;
+}
+.box-odd:hover{
+
+    padding:60px;
+    
+}
+.box-even:hover{
+     padding:60px;
+   
+}
+img{
+    height:150px !important;
+    width:200px !important;
+}
