@@ -138,6 +138,36 @@ namespace LearningBiology.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult nextSection(int sectionId)
+        {
+            if (sectionId == 1)
+            {
+                return RedirectToAction("Details", new { id=2});
+            }
+            else if (sectionId == 2)
+            {
+                return RedirectToAction("Details", new { id = 3 });
+            }
+            else if (sectionId == 3)
+            {
+                return RedirectToAction("Details", new { id = 4 });
+            }
+            else if (sectionId == 4)
+            {
+                return RedirectToAction("Details", new { id = 5 });
+            }
+            else if (sectionId == 5)
+            {
+                return RedirectToAction("Details", new { id = 6 });
+            }
+            else
+            {
+                return RedirectToAction("Detais", new { id = 1 });
+            }
+
+            
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
