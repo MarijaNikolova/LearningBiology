@@ -61,7 +61,8 @@ namespace LearningBiology.Controllers
         // GET: Sections/Create
         public ActionResult Create()
         {
-            return View();
+            // return View();
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: Sections/Create
@@ -71,20 +72,21 @@ namespace LearningBiology.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,ShortContent,Content,VideoName")] Section section)
         {
-            if (ModelState.IsValid)
+            /*if (ModelState.IsValid)
             {
                 db.Sections.Add(section);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(section);
+            return View(section);*/
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Sections/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
+            /*if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -93,7 +95,8 @@ namespace LearningBiology.Controllers
             {
                 return HttpNotFound();
             }
-            return View(section);
+            return View(section); */
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: Sections/Edit/5
@@ -103,19 +106,21 @@ namespace LearningBiology.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Name,ShortContent,Content,VideoName")] Section section)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(section).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(section);
+            /* if (ModelState.IsValid)
+             {
+                 db.Entry(section).State = EntityState.Modified;
+                 db.SaveChanges();
+                 return RedirectToAction("Index");
+             }
+             return View(section); */
+            return RedirectToAction("Index", "Home");
+
         }
 
         // GET: Sections/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
+            /*if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -124,7 +129,8 @@ namespace LearningBiology.Controllers
             {
                 return HttpNotFound();
             }
-            return View(section);
+            return View(section); */
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: Sections/Delete/5
@@ -132,10 +138,11 @@ namespace LearningBiology.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Section section = db.Sections.Find(id);
-            db.Sections.Remove(section);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            /*  Section section = db.Sections.Find(id);
+             db.Sections.Remove(section);
+             db.SaveChanges();
+             return RedirectToAction("Index"); */
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult nextSection(int sectionId)

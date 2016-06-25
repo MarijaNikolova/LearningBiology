@@ -43,8 +43,10 @@ namespace LearningBiology.Controllers
         // GET: Questions/Create
         public ActionResult Create()
         {
+            /*
             ViewBag.sectionID = new SelectList(db.Sections, "ID", "Name");
-            return View();
+            return View();*/
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: Questions/Create
@@ -54,21 +56,22 @@ namespace LearningBiology.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,text,sectionID,Type")] Question question)
         {
-            if (ModelState.IsValid)
-            {
-                db.Questions.Add(question);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            /*  if (ModelState.IsValid)
+              {
+                  db.Questions.Add(question);
+                  db.SaveChanges();
+                  return RedirectToAction("Index");
+              }
 
-            ViewBag.sectionID = new SelectList(db.Sections, "ID", "Name", question.sectionID);
-            return View(question);
+              ViewBag.sectionID = new SelectList(db.Sections, "ID", "Name", question.sectionID);
+              return View(question); */
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Questions/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
+            /*if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -78,7 +81,8 @@ namespace LearningBiology.Controllers
                 return HttpNotFound();
             }
             ViewBag.sectionID = new SelectList(db.Sections, "ID", "Name", question.sectionID);
-            return View(question);
+            return View(question); */
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: Questions/Edit/5
@@ -88,20 +92,21 @@ namespace LearningBiology.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,text,sectionID,Type")] Question question)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(question).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.sectionID = new SelectList(db.Sections, "ID", "Name", question.sectionID);
-            return View(question);
+            /* if (ModelState.IsValid)
+             {
+                 db.Entry(question).State = EntityState.Modified;
+                 db.SaveChanges();
+                 return RedirectToAction("Index");
+             }
+             ViewBag.sectionID = new SelectList(db.Sections, "ID", "Name", question.sectionID);
+             return View(question); */
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Questions/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
+            /*if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -110,7 +115,8 @@ namespace LearningBiology.Controllers
             {
                 return HttpNotFound();
             }
-            return View(question);
+            return View(question); */
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: Questions/Delete/5
@@ -118,10 +124,11 @@ namespace LearningBiology.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Question question = db.Questions.Find(id);
+            /*Question question = db.Questions.Find(id);
             db.Questions.Remove(question);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index"); */
+            return RedirectToAction("Index", "Home");
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

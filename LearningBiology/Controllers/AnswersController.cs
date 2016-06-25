@@ -18,13 +18,14 @@ namespace LearningBiology.Controllers
         // GET: Answers
         public ActionResult Index()
         {
-            return View(db.Answers.ToList());
+            //return View(db.Answers.ToList());
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Answers/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            /*if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -33,13 +34,15 @@ namespace LearningBiology.Controllers
             {
                 return HttpNotFound();
             }
-            return View(answer);
+            return View(answer); */
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Answers/Create
         public ActionResult Create()
         {
-            return View();
+            //return View();
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: Answers/Create
@@ -49,29 +52,31 @@ namespace LearningBiology.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,text")] Answer answer)
         {
-            if (ModelState.IsValid)
+            /*if (ModelState.IsValid)
             {
                 db.Answers.Add(answer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(answer);
+            return View(answer); */
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Answers/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Answer answer = db.Answers.Find(id);
-            if (answer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(answer);
+            /* if (id == null)
+             {
+                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+             }
+             Answer answer = db.Answers.Find(id);
+             if (answer == null)
+             {
+                 return HttpNotFound();
+             }
+             return View(answer); */
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: Answers/Edit/5
@@ -81,28 +86,30 @@ namespace LearningBiology.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,text")] Answer answer)
         {
-            if (ModelState.IsValid)
+            /*if (ModelState.IsValid)
             {
                 db.Entry(answer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(answer);
+            return View(answer); */
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Answers/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Answer answer = db.Answers.Find(id);
-            if (answer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(answer);
+            /* if (id == null)
+             {
+                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+             }
+             Answer answer = db.Answers.Find(id);
+             if (answer == null)
+             {
+                 return HttpNotFound();
+             }
+             return View(answer);*/
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: Answers/Delete/5
@@ -110,10 +117,11 @@ namespace LearningBiology.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Answer answer = db.Answers.Find(id);
+            /*Answer answer = db.Answers.Find(id);
             db.Answers.Remove(answer);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index"); */
+            return RedirectToAction("Index", "Home");
         }
 
         protected override void Dispose(bool disposing)

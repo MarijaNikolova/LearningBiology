@@ -18,31 +18,34 @@ namespace LearningBiology.Controllers
         // GET: OfferedAswers
         public ActionResult Index()
         {
-            var offeredAnswers = db.OfferedAnswers.Include(o => o.Answer).Include(o => o.Question);
-            return View(offeredAnswers.ToList());
+            //var offeredAnswers = db.OfferedAnswers.Include(o => o.Answer).Include(o => o.Question);
+            //return View(offeredAnswers.ToList());
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: OfferedAswers/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            OfferedAswer offeredAswer = db.OfferedAnswers.Find(id);
-            if (offeredAswer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(offeredAswer);
+            /* if (id == null)
+             {
+                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+             }
+             OfferedAswer offeredAswer = db.OfferedAnswers.Find(id);
+             if (offeredAswer == null)
+             {
+                 return HttpNotFound();
+             }
+             return View(offeredAswer); */
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: OfferedAswers/Create
         public ActionResult Create()
         {
-            ViewBag.AnswerID = new SelectList(db.Answers, "ID", "text");
-            ViewBag.QuestionID = new SelectList(db.Questions, "ID", "text");
-            return View();
+            /* ViewBag.AnswerID = new SelectList(db.Answers, "ID", "text");
+             ViewBag.QuestionID = new SelectList(db.Questions, "ID", "text");
+             return View(); */
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: OfferedAswers/Create
@@ -52,7 +55,7 @@ namespace LearningBiology.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,QuestionID,AnswerID,IsCorrect")] OfferedAswer offeredAswer)
         {
-            if (ModelState.IsValid)
+            /*if (ModelState.IsValid)
             {
                 db.OfferedAnswers.Add(offeredAswer);
                 db.SaveChanges();
@@ -61,24 +64,26 @@ namespace LearningBiology.Controllers
 
             ViewBag.AnswerID = new SelectList(db.Answers, "ID", "text", offeredAswer.AnswerID);
             ViewBag.QuestionID = new SelectList(db.Questions, "ID", "text", offeredAswer.QuestionID);
-            return View(offeredAswer);
+            return View(offeredAswer); */
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: OfferedAswers/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            OfferedAswer offeredAswer = db.OfferedAnswers.Find(id);
-            if (offeredAswer == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.AnswerID = new SelectList(db.Answers, "ID", "text", offeredAswer.AnswerID);
-            ViewBag.QuestionID = new SelectList(db.Questions, "ID", "text", offeredAswer.QuestionID);
-            return View(offeredAswer);
+            /* if (id == null)
+             {
+                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+             }
+             OfferedAswer offeredAswer = db.OfferedAnswers.Find(id);
+             if (offeredAswer == null)
+             {
+                 return HttpNotFound();
+             }
+             ViewBag.AnswerID = new SelectList(db.Answers, "ID", "text", offeredAswer.AnswerID);
+             ViewBag.QuestionID = new SelectList(db.Questions, "ID", "text", offeredAswer.QuestionID);
+             return View(offeredAswer);*/
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: OfferedAswers/Edit/5
@@ -88,30 +93,32 @@ namespace LearningBiology.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,QuestionID,AnswerID,IsCorrect")] OfferedAswer offeredAswer)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(offeredAswer).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.AnswerID = new SelectList(db.Answers, "ID", "text", offeredAswer.AnswerID);
-            ViewBag.QuestionID = new SelectList(db.Questions, "ID", "text", offeredAswer.QuestionID);
-            return View(offeredAswer);
+            /* if (ModelState.IsValid)
+             {
+                 db.Entry(offeredAswer).State = EntityState.Modified;
+                 db.SaveChanges();
+                 return RedirectToAction("Index");
+             }
+             ViewBag.AnswerID = new SelectList(db.Answers, "ID", "text", offeredAswer.AnswerID);
+             ViewBag.QuestionID = new SelectList(db.Questions, "ID", "text", offeredAswer.QuestionID);
+             return View(offeredAswer);*/
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: OfferedAswers/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            OfferedAswer offeredAswer = db.OfferedAnswers.Find(id);
-            if (offeredAswer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(offeredAswer);
+            /* if (id == null)
+             {
+                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+             }
+             OfferedAswer offeredAswer = db.OfferedAnswers.Find(id);
+             if (offeredAswer == null)
+             {
+                 return HttpNotFound();
+             }
+             return View(offeredAswer); */
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: OfferedAswers/Delete/5
@@ -119,10 +126,11 @@ namespace LearningBiology.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            OfferedAswer offeredAswer = db.OfferedAnswers.Find(id);
+            /*OfferedAswer offeredAswer = db.OfferedAnswers.Find(id);
             db.OfferedAnswers.Remove(offeredAswer);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index"); */
+            return RedirectToAction("Index", "Home");
         }
 
         protected override void Dispose(bool disposing)
