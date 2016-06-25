@@ -18,5 +18,9 @@ namespace LearningBiology.DAL
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
         public DbSet<OfferedAswer> OfferedAnswers { get; set; }
+
+        public System.Data.Entity.DbSet<LearningBiology.Models.Paragraph> Paragraphs { get; set; }
+
+        public System.Data.Entity.DbSet<LearningBiology.Models.Images> Images { get; set; }
     }
 }

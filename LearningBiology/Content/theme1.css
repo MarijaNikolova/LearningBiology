@@ -1,0 +1,110 @@
+﻿body {
+   background-color: #699A2F;
+   font-size:17px;
+}
+.list-group{
+    box-shadow: 7px 7px 7px #888888;
+    padding-right:0;
+    text-align:justify;
+    padding-left:0;
+}
+ .active_list_group {
+     background-color: #93BD17;
+     border-top-right-radius: 0px !important;
+     border-top-left-radius: 0px !important;
+     border-bottom-right-radius: 0px !important;
+     border-bottom-left-radius: 0px !important;
+   
+}
+.nonactive {
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    border: none;
+    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    
+}
+.lead_theme {
+     border: none;
+     border-top-right-radius: 0px !important;
+     border-top-left-radius: 0px !important;
+     
+}
+.details{
+    background-color: #E6E7E8;
+     box-shadow: 7px 7px 7px #888888;
+}
+.row1{
+    background-color:#BDBFC1;
+}
+.row{
+    height:100px;
+    padding-right:0;
+    padding-left:0;
+    padding-bottom:20px;
+    padding-top:20px;
+}
+.video_class{
+    font-family: 'Roboto Medium', sans-serif;
+    background-color: #52658C;
+    height: 50px;
+    width: 150px;
+    border: 0px;
+    font-size: 20px;
+}
+.game_class{
+    font-family: 'Roboto Medium', sans-serif;
+    background-color: #A7365E;
+     height: 50px;
+    width: 150px;
+    border:0px;
+    font-size: 20px;
+}
+.kviz_class{
+    font-family: 'Roboto Medium', sans-serif;
+    background-color: #Cc3136;
+     height: 50px;
+    width: 150px;
+    border:0px;
+    font-size: 20px;
+}
+.btn{
+    border-color: white;
+    color: white;
+}
+.row2{
+    background-color:#5cb85c;
+    vertical-align: middle;
+    margin-top: 5px;
+}
+.align_p{
+    margin-top:5px;
+}
+h2,h3{
+    font-weight: bold;
+    color:#52658c;
+}
+.box{
+    width:100%;
+    border-radius:15px;
+    padding:50px;
+    font-size:20px;
+    color:white;
+    text-align:justify;
+}
+.box-even{
+    background-color:#DE9B1F;
+    
+}
+.box-odd{
+    background-color:#4EB693;
+}
+.box-odd:hover{
+
+    padding:60px;
+    
+}
+.box-even:hover{
+     padding:60px;
+   
+}

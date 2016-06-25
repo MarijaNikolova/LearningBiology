@@ -15,6 +15,8 @@ namespace LearningBiology.Models
         public string VideoName { get; set; }
 
         public virtual ICollection<Question> Questions { get; set; }
+        public virtual ICollection<Paragraph> Paragraphs { get; set; }
+        public virtual ICollection<Images> Images{ get; set; }
     }
    
 }

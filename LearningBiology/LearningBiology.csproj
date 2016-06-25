@@ -198,8 +198,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AnswersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OfferedAswersController.cs" />
+    <Compile Include="Controllers\ParagraphsController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Controllers\SectionsController.cs" />
     <Compile Include="DAL\DatabaseContext.cs" />
@@ -226,12 +228,26 @@
     <Compile Include="Migrations\201606191540486_useranswer1.Designer.cs">
       <DependentUpon>201606191540486_useranswer1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606250838167_paragraphtable.cs" />
+    <Compile Include="Migrations\201606250838167_paragraphtable.Designer.cs">
+      <DependentUpon>201606250838167_paragraphtable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606250845104_paragraphtable1.cs" />
+    <Compile Include="Migrations\201606250845104_paragraphtable1.Designer.cs">
+      <DependentUpon>201606250845104_paragraphtable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606250907498_imagestable.cs" />
+    <Compile Include="Migrations\201606250907498_imagestable.Designer.cs">
+      <DependentUpon>201606250907498_imagestable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Images.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OfferedAswer.cs" />
+    <Compile Include="Models\Paragraph.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\QuestionAnswerViewModel.cs" />
     <Compile Include="Models\Section.cs" />
@@ -243,8 +259,21 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\basil-1.jpg" />
+    <Content Include="Content\Images\bumblebee.jpg" />
+    <Content Include="Content\Images\clover_flower.jpg" />
+    <Content Include="Content\Images\clover_plant.png" />
+    <Content Include="Content\Images\greenhouse.jpg" />
+    <Content Include="Content\Images\growth.jpg" />
     <Content Include="Content\Images\kviz-rastenie.png" />
+    <Content Include="Content\Images\prva-2.jpg" />
+    <Content Include="Content\Images\prva.jpg" />
+    <Content Include="Content\Images\rastenieisonce.jpg" />
+    <Content Include="Content\Images\rastenieivoda.jpg" />
+    <Content Include="Content\Images\sonce.jpg" />
+    <Content Include="Content\Images\sunflower.jpg" />
     <Content Include="Content\QuestionCss.css" />
+    <Content Include="Content\theme1.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -327,6 +356,16 @@
     <Content Include="Views\Questions\CorrectAnswer.cshtml" />
     <Content Include="Views\Questions\PopupCorrect.cshtml" />
     <Content Include="Views\Questions\Correct.cshtml" />
+    <Content Include="Views\Paragraphs\Create.cshtml" />
+    <Content Include="Views\Paragraphs\Delete.cshtml" />
+    <Content Include="Views\Paragraphs\Details.cshtml" />
+    <Content Include="Views\Paragraphs\Edit.cshtml" />
+    <Content Include="Views\Paragraphs\Index.cshtml" />
+    <Content Include="Views\Images\Create.cshtml" />
+    <Content Include="Views\Images\Delete.cshtml" />
+    <Content Include="Views\Images\Details.cshtml" />
+    <Content Include="Views\Images\Edit.cshtml" />
+    <Content Include="Views\Images\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -354,6 +393,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606191540486_useranswer1.resx">
       <DependentUpon>201606191540486_useranswer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606250838167_paragraphtable.resx">
+      <DependentUpon>201606250838167_paragraphtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606250845104_paragraphtable1.resx">
+      <DependentUpon>201606250845104_paragraphtable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606250907498_imagestable.resx">
+      <DependentUpon>201606250907498_imagestable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

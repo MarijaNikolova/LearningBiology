@@ -11,129 +11,112 @@ using LearningBiology.Models;
 
 namespace LearningBiology.Controllers
 {
-    public class SectionsController : Controller
+    public class ParagraphsController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
 
-        // GET: Sections
+        // GET: Paragraphs
         public ActionResult Index()
         {
-            return View(db.Sections.ToList());
+            var paragraphs = db.Paragraphs.Include(p => p.Section);
+            return View(paragraphs.ToList());
         }
 
-        // GET: Sections/Details/5
+        // GET: Paragraphs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Section section = db.Sections.Find(id);
-            if (section == null)
+            Paragraph paragraph = db.Paragraphs.Find(id);
+            if (paragraph == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.active = section.ID;
-
-            
-
-            string content = section.Content.Replace("t","\t").Replace("-","");
-            string [] pars = content.Split('w');
-            string [] images=new string[pars.Length];
-            for (int i = 0; i < pars.Count(); ++i)
-            {
-                try
-                {
-                    images[i] = section.Images.Where(p => p.ParagraphNumber == i).First().Title;
-                }catch(Exception e)
-                {
-                    images[i] = null;
-                }
-            }
-
-            ViewBag.count = pars.Length;
-            ViewBag.paragraphs=pars;
-            ViewBag.images = images;
-            return View(section);
-
+            return View(paragraph);
         }
 
-        // GET: Sections/Create
+        // GET: Paragraphs/Create
         public ActionResult Create()
         {
+            ViewBag.SectionID = new SelectList(db.Sections, "ID", "Name");
             return View();
         }
 
-        // POST: Sections/Create
+        // POST: Paragraphs/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,ShortContent,Content,VideoName")] Section section)
+        public ActionResult Create([Bind(Include = "ID,SectionID,HasPicture,pictureName,content")] Paragraph paragraph)
         {
             if (ModelState.IsValid)
             {
-                db.Sections.Add(section);
+                db.Paragraphs.Add(paragraph);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(section);
+            ViewBag.SectionID = new SelectList(db.Sections, "ID", "Name", paragraph.SectionID);
+            return View(paragraph);
         }
 
-        // GET: Sections/Edit/5
+        // GET: Paragraphs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Section section = db.Sections.Find(id);
-            if (section == null)
+            Paragraph paragraph = db.Paragraphs.Find(id);
+            if (paragraph == null)
             {
                 return HttpNotFound();
             }
-            return View(section);
+            ViewBag.SectionID = new SelectList(db.Sections, "ID", "Name", paragraph.SectionID);
+            return View(paragraph);
         }
 
-        // POST: Sections/Edit/5
+        // POST: Paragraphs/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,ShortContent,Content,VideoName")] Section section)
+        public ActionResult Edit([Bind(Include = "ID,SectionID,HasPicture,pictureName,content")] Paragraph paragraph)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(section).State = EntityState.Modified;
+                db.Entry(paragraph).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(section);
+            ViewBag.SectionID = new SelectList(db.Sections, "ID", "Name", paragraph.SectionID);
+            return View(paragraph);
         }
 
-        // GET: Sections/Delete/5
+        // GET: Paragraphs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Section section = db.Sections.Find(id);
-            if (section == null)
+            Paragraph paragraph = db.Paragraphs.Find(id);
+            if (paragraph == null)
             {
                 return HttpNotFound();
             }
-            return View(section);
+            return View(paragraph);
         }
 
-        // POST: Sections/Delete/5
+        // POST: Paragraphs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Section section = db.Sections.Find(id);
-            db.Sections.Remove(section);
+            Paragraph paragraph = db.Paragraphs.Find(id);
+            db.Paragraphs.Remove(paragraph);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
