@@ -162,7 +162,7 @@ namespace LearningBiology.Controllers
             }
             else
             {
-                return RedirectToAction("Detais", new { id = 1 });
+                return RedirectToAction("Details", new { id = 1 });
             }
 
             
